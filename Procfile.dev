@@ -1,0 +1,2 @@
+web: rackup -p $PORT -s Puma
+pack: ./node_modules/.bin/webpack-serve --content app/ --hot

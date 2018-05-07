@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "noImplicitAny": true,
+        "sourceMap": true,
+        "target": "es5",
+        "jsx": "react",
+        "allowSyntheticDefaultImports": true,
+        "module": "ESNext",
+        "moduleResolution": "node",
+        "baseUrl": ".",
+        "paths": {
+            "components/*": [
+                "app/components/*"
+            ],
+            "views/*": [
+                "app/views/*"
+            ]
+        }
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}
