@@ -6,7 +6,7 @@ require 'yaml'
 class Bootstrap < Sinatra::Base
 
     set :root, File.dirname(__FILE__)
-    env = ENV['ENV'] || 'development'
+    env = ENV['RACK_ENV'] || 'development'
     config = YAML.load(File.read(File.join(settings.root, '..', 'config', 'database.yml')))
     ActiveRecord::Base.configurations = config
     ActiveRecord::Base.establish_connection env.to_sym
