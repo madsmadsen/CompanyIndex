@@ -8,6 +8,8 @@ gem "sinatra"
 gem "sinatra-contrib"
 gem "sinatra-activerecord"
 gem "puma"
+gem "rake"
+gem "pg"
 
 group :development do
     gem "sqlite3"
