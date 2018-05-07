@@ -74,7 +74,7 @@ export class Index extends React.Component<{}, IIndexState> {
 
   public refreshList = () =>
   {
-    fetch('http://localhost:3000/api/companies.json')
+    fetch('/api/companies.json')
       .then(res => 
       {
         return res.json();
