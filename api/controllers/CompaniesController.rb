@@ -48,6 +48,9 @@ class CompaniesController < Bootstrap
 
     get '/api/companies/:id\.json' do
         content_type :json
+        headers 'Access-Control-Allow-Origin' => '*'
+        headers 'Access-Control-Allow-Headers' => 'Content-Type'
+        
         @company = Company.find_by id: params[:id]
         if @company
             status 200
