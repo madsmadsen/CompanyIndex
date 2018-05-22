@@ -24,7 +24,7 @@ import { Navbar,
   ModalCardFooter,
   Delete } from "bloomer";
 import { CreateCompany } from "components/CreateCompany";
-
+import prefix from "../config";
 
 interface IIndexState {
   modalOpen: boolean;
@@ -74,7 +74,7 @@ export class Index extends React.Component<{}, IIndexState> {
 
   public refreshList = () =>
   {
-    fetch('/api/companies.json')
+    fetch(`${prefix}/api/companies.json`)
       .then(res => 
       {
         return res.json();

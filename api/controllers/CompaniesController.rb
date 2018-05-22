@@ -5,12 +5,22 @@ class CompaniesController < Bootstrap
 
     get '/api/companies\.json' do
         content_type :json
+        headers 'Access-Control-Allow-Origin' => '*'
+        headers 'Access-Control-Allow-Headers' => 'Content-Type'
         @companies = Company.all
         @companies.to_json
     end
 
+    options '/api/companies\.json' do
+        headers 'Access-Control-Allow-Origin' => '*'
+        headers 'Access-Control-Allow-Headers' => 'Content-Type'
+    end
+
     post '/api/companies\.json' do
         content_type :json
+        headers 'Access-Control-Allow-Origin' => '*'
+        headers 'Access-Control-Allow-Headers' => 'Content-Type'
+
         @company = Company.create cvr: @body[:cvr],
                                   name: @body[:name],
                                   address: @body[:address],

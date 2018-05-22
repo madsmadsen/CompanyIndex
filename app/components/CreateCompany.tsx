@@ -25,6 +25,7 @@ import { Navbar,
     Delete } from "bloomer";
 
 import 'whatwg-fetch';
+import prefix from "../config";
 
 interface ICreateCompanyProps {
     isActive: boolean;
@@ -123,7 +124,7 @@ export class CreateCompany extends React.Component<ICreateCompanyProps, ICreateC
     public handleCreate = () =>
     {
         this.setState({isCreating: true});
-         fetch('/api/companies.json', {
+         fetch(`${prefix}/api/companies.json`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
